@@ -36,3 +36,20 @@ END;
 //
 DELIMITER ;
 ```
+Exercici 3 -  Fes una funció anomenada spIncrement que donat un codi d’empleat i un % de increment, ens calculi el salari sumant aquest percentatge. 
+
+Per exemple, suposem que l’ empleat amb id_empleat = 124 té un salari de 1000 
+
+Exemple: SELECT spIncrement(124,10) obtindriem -> 1100
+``` Mysql
+
+```
+
+Exercici 4 -  Fes una funció anomenada spPringat, tal que li passem un codi de departament, i ens torni el codi d’empleat que guanya menys d’aquell departament.
+``` Mysql
+```
+
+Exercici 5 -  Utilitzant la funció spPringat fes una consulta per obtenir de cada departament, l’empleat pringat. Mostra el codi i nom del departament, i el codi d’empleat.
+``` Mysql
+```
+
