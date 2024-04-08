@@ -52,4 +52,38 @@ Exercici 4 -  Fes una funció anomenada spPringat, tal que li passem un codi de 
 Exercici 5 -  Utilitzant la funció spPringat fes una consulta per obtenir de cada departament, l’empleat pringat. Mostra el codi i nom del departament, i el codi d’empleat.
 ``` Mysql
 ```
+# Ejercicios de Procedimientos
+Exercici 1 -  Fes un procediment que permeti obtenir la data i hora del sistema i l’usuari actual. 
+```Mysql
+DELIMITER //
+    CREATE PROCEDURE GetSystemInfo()
+BEGIN
+  SELECT NOW() AS SystemTime, CURRENT_USER() AS CurrentUser;
+END;
 
+DELIMITER ;
+```
+
+Exercici 2 -  Fes un procediment que intercanvii el sou de dos empleats passats per paràmetre.
+```Mysql
+DELIMITER //
+CREATE procedure spSwapSous (IN pEmpleatId1 INT, IN pEmpleatId2 INT)
+BEGIN
+	DECLARE vSalariTimp DECIMAL(8,2);
+    
+    SELECT salari INTO vSalariTimp
+		FROM empleats
+	WHERE empleat_id = pEmpleatId1;
+    
+    UPDATE empleats
+		SET salari = (select salari
+						FROM empleats
+					  WHERE empleat_id = pEmpleatId2)
+	WHERE empleat_id = pEmpleatId1;
+    
+    UPDATE empleats
+		SET salari = vSalariTimp
+	WHERE empleat_id = pEmpleatId2;
+    END
+    DELIMITER ;
+```
