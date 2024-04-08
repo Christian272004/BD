@@ -56,11 +56,10 @@ Exercici 5 -  Utilitzant la funció spPringat fes una consulta per obtenir de ca
 Exercici 1 -  Fes un procediment que permeti obtenir la data i hora del sistema i l’usuari actual. 
 ```Mysql
 DELIMITER //
-    CREATE PROCEDURE GetSystemInfo()
+CREATE PROCEDURE spInformacion()
 BEGIN
-  SELECT NOW() AS SystemTime, CURRENT_USER() AS CurrentUser;
+  SELECT NOW() AS Tiempo, CURRENT_USER() AS Usuario;
 END;
-
 DELIMITER ;
 ```
 
