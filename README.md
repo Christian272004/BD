@@ -179,3 +179,34 @@ BEGIN
     END
     DELIMITER ;
 ```
+Exercici 3 - Fes un procediment que donat dos Ids d'empleat assigni el codi de
+departament del primer en el segon.
+```mysql
+DELIMITER //
+DROP PROCEDURE IF EXISTS cambiarId;
+CREATE PROCEDURE cambiarId(IN pId_primer INT, IN pId_segon INT)
+BEGIN
+	DECLARE vDep1 INT;
+    SELECT departament_id INTO vDep1
+		FROM empleats
+	WHERE empleat_id = pId_primer;
+    UPDATE empleats
+    SET departament_id = vDep1
+    WHERE empleat_id = pId_segon;
+END //
+DELIMITER ;
+```
+Exercici 4 - Fes un procediment que donat dos codis de departament assigni tots els
+empleats del segon en el primer. Un cop executat el procediment el departament que
+correspont en el segon paràmetre ha de quedar desert/sense cap empleat.
+```mysql
+DELIMITER //
+DROP PROCEDURE IF EXISTS MoverEmpleados;
+CREATE PROCEDURE MoverEmpleados(IN pDep1 INT, In pDep2 INT)
+BEGIN
+	UPDATE empleats
+	SET departament_id = pDep1
+    WHERE departament_id = pDep2;
+END //
+DELIMITER ;
+```
