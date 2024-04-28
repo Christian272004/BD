@@ -1,3 +1,8 @@
+# ExercicisUF3
+Ejercicios de base de datos de la UF3 
+
+La base de datos para realizar estos ejercicios es la de [recursos humanos](https://www.sapalomera.cat/moodlecf/pluginfile.php/43573/mod_resource/content/0/bbdd_rrhh_v2%20%286%29.sql)
+
 # Ejercicios de Procedimientos
 Exercici 1 -  Fes un procediment que permeti obtenir la data i hora del sistema i l’usuari actual. 
 ```Mysql
