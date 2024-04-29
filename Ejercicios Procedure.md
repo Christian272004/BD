@@ -71,12 +71,29 @@ DELIMITER ;
 Exercici 5 - Fes un procediment per mostrar un llistat dels empleats. Volem veure el
 id_empleat, nom_empleat, nom_departament i el nom de la localització del departament
 ```mysql
-
+DELIMITER //
+DROP PROCEDURE IF EXISTS listaempleats;
+CREATE PROCEDURE listaempleats()
+BEGIN
+	SELECT e.empleat_id,e.nom,d.nom,l.ciutat
+		FROM empleats e
+	INNER JOIN departaments d ON e.departament_id = d.departament_id
+    INNER JOIN localitzacions l ON d.localitzacio_id = l.localitzacio_id;
+END //
+DELIMITER ;
 ```
 Exercici 6 - Fes un procediment que donat un codi d’empleat, ens doni la informació de
 l’empleat ( agafa la informació que creguis rellevant)
 ```mysql
-
+DELIMITER //
+DROP PROCEDURE IF EXISTS infoempleats;
+CREATE PROCEDURE infoempleats(IN pId_empleat INT)
+BEGIN
+	SELECT *
+		FROM empleats
+	WHERE empleat_id = pId_empleat;
+END //
+DELIMITER ;
 ```
 Exercici 7 - Volem fer un registre dels usuaris que entren al nostre sistema. Per fer-ho
 primer caldrà crear una taula amb dos camps, un per guardar l’usuari i l’altre per guardar
