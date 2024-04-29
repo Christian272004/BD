@@ -68,3 +68,43 @@ BEGIN
 END //
 DELIMITER ;
 ```
+Exercici 5 - Fes un procediment per mostrar un llistat dels empleats. Volem veure el
+id_empleat, nom_empleat, nom_departament i el nom de la localització del departament
+```mysql
+
+```
+Exercici 6 - Fes un procediment que donat un codi d’empleat, ens doni la informació de
+l’empleat ( agafa la informació que creguis rellevant)
+```mysql
+
+```
+Exercici 7 - Volem fer un registre dels usuaris que entren al nostre sistema. Per fer-ho
+primer caldrà crear una taula amb dos camps, un per guardar l’usuari i l’altre per guardar
+la data i hora de l’accés.
+```mysql
+
+```
+Exercici 8 - A continuació feu un procediment sense arguments, de manera que cada
+vegada que el crideu, insereixi en aquesta taula l’usuari actual i la data i hora en que s’ha
+executat el procediment.
+```mysql
+
+```
+Exercici 9 - Fes un procediment que ens permeti afegir un nou departament però amb la
+següent particularitat: En cas que la localització no existeixi a la taula localitzacions, ens
+posarà un NULL en el camp id_localtizacio de la taula departaments. Al procediment li
+hem de passar el codi de departament, el nom del departament i el codi de la localització.
+```mysql
+
+```
+Exercici 10 - Fes un procediment que donat un codi d’empleat, ens posi en paràmetres
+de sortida el nom i el cognom. Indica com ho pots fer per comprovar si el procediment et
+funciona.
+```mysql
+
+```
+Exercici 11 - Fes un procediment que ens permeti modificar el nom i cognom d’un
+empleat. 
+```mysql
+
+```
